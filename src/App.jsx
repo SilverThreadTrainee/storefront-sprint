@@ -1,5 +1,6 @@
 import ProductCard from "./components/ProductCard";
 import InventoryBadge from "./components/InventoryBadge";
+=======
 function App() {
   return (
     <div className="p-6">
@@ -11,3 +12,5 @@ function App() {
 }
 
 export default App;
+
+
