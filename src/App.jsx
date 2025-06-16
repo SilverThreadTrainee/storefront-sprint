@@ -1,10 +1,12 @@
 import ProductCard from "./components/ProductCard";
-import PromoBanner from "./components/PromoBanner";
+import InventoryBadge from "./components/InventoryBadge";
+=======
 function App() {
   return (
     <div className="p-6">
       <ProductCard />
-      <PromoBanner />
+      <InventoryBadge inStock={true} />
+      <InventoryBadge inStock={false} />
     </div>
   );
 }
