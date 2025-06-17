@@ -1,7 +1,11 @@
+// PromoBanner.jsx
 export default function PromoBanner() {
   return (
-    <div className="bg-yellow-300 text-center text-lg p-4 font-semibold shadow-sm">
-      :fire: Limited Time Offer! Use code <strong>SALE50</strong> for 50% OFF :fire:
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-4">
+      <h2 className="text-xl">Black Friday Sale: Up to 50% OFF on all electronics!</h2>
+      <button className="bg-white text-purple-600 px-4 py-2 rounded mt-2 hover:bg-gray-100 transition">
+        Shop Now
+      </button>
     </div>
   );
 }
