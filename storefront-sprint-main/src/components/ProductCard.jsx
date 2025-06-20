@@ -5,6 +5,12 @@ export default function ProductCard({ product }) {
       <img
         src={product.image}
         alt={product.name}
+        // fix 
+         onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = './src/images/fallback-image.png'; // Add this to public/
+            }}
+  
         className="mb-4 w-full h-40 object-cover rounded"
       />
       <h3 className="text-lg font-semibold">{product.name}</h3>
