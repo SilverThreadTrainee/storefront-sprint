@@ -1,95 +1,78 @@
-# 🛍️ Storefront Sprint – Git Collaboration Project
+# 🛍️ TechStore - Product Listing App
 
-This repository showcases a simulated real-world collaborative development workflow using Git and GitHub. The project involved multiple contributors working on different UI components of an e-commerce storefront, using branching, pull requests, and conflict resolution strategies.
-
----
-
-## 🚀 Project Objective
-
-- Set up a shared GitHub repository
-- Define and follow a branching model (main, feature, bugfix)
-- Develop UI/logic components in isolation using branches
-- Collaboratively resolve at least one merge conflict
-- Practice code review via GitHub pull requests
+TechStore is a simple React-based e-commerce UI prototype that displays featured products in a responsive grid layout. The app uses reusable components like product cards, promotional banners, inventory badges, and a checkout button. This version also includes inline code documentation and a basic unit test for component rendering.
 
 ---
 
-## 🗂️ Branching Strategy
+## 📂 Project Structure
 
-```plaintext
-main
-├── feature/inventory-badge
-├── feature/product-card
-└── feature/Promo-banner
-└── feature/Checkout-button
+/src
+├── App.jsx # Main application file with product listing logic
+├── /components
+│ ├── ProductCard.jsx # Displays product image, name, price
+│ ├── InventoryBadge.jsx # Shows stock status: in stock, low stock, out of stock
+│ ├── PromoBanner.jsx # Promotional top banner
+│ └── CheckoutButton.jsx # Checkout button at the bottom
+├── /images # Product images used in cards
+└── /tests # Unit tests (e.g., ProductCard.test.jsx)
 
-main: Stable production-ready branch
+yaml
+Copy
+Edit
 
-feature/*: New features developed individually
+---
 
-bugfix/*: Isolated fixes handled independently
+## ✨ Features
 
-🛠️ Features Worked On
-Branch	Contributor	Description
-feature/inventory-badge	AartiPatel401	Added a badge to display inventory status
-feature/product-card	(Optional) Team Member	Product card UI structure
-bugfix/*	(Optional) Team Member	Fixes for minor visual/UI issues
+- 📦 **Product Cards** — Show name, image, price, and discount
+- 🔖 **Inventory Badges** — Dynamically indicate stock status
+- 🪧 **Promo Banner** — Displays promotional content
+- 🧾 **Checkout Button** — Triggers checkout (UI only)
+- 🧠 **Inline Comments** — Added for better understanding of code logic
+- ✅ **Unit Test** — Tests product name rendering in `ProductCard`
 
-🔁 Pull Requests & Collaboration
-Each contributor submitted a pull request from their feature branch
+---
 
-Peer reviews were conducted before merging into main
+## 🧪 Testing
 
-One merge conflict occurred in src/App.jsx while merging feature/inventory-badge
+A sample test is written using **React Testing Library**:
 
-Conflict was resolved manually using GitHub’s web editor, ensuring logic from both branches was preserved
+```js
+// File: __tests__/ProductCard.test.jsx
+import { render } from '@testing-library/react';
+import ProductCard from '../ProductCard';
 
-🧠 Conflict Details
-File Involved: src/App.jsx
-
-Conflict: Simultaneous edits in the same JSX section by both main and feature/inventory-badge
-
-Resolution:
-
-Used GitHub conflict markers (<<<<<<<, =======, >>>>>>>)
-
-Team discussed and merged both changes cleanly
-
-Commit created to finalize resolution
-
-✅ Final Outcome
-All features merged into main successfully
-
-No post-merge errors
-
-Project demonstrates effective use of:
-
-Git branching
-
-Pull requests
-
-Conflict resolution
-
-Team collaboration
-
-📚 Lessons Learned
-Importance of branching in parallel development
-
-Hands-on practice with resolving merge conflicts
-
-Real-world GitHub workflows using PRs and code reviews
-
-Improved communication and coordination among team members
-
-📸 Poster & Documentation
-View the Summary Poster (PDF) – Visual explanation of conflict resolution and team Git workflow
-
-👥 Contributors
-AartiPatel401 – Feature: Inventory Badge
-
-Ruchit3601 – Reviewed PRs, facilitated merging & documentation
-
-Dhara - Feature: Checkout-button
-Ajay - Feature: Promo-Banner
-
-
+test('renders product name correctly', () => {
+  const mockProduct = { name: 'Coffee Maker', price: '$89', image: 'coffee.jpg' };
+  const { getByText } = render(<ProductCard product={mockProduct} />);
+  expect(getByText(/coffee maker/i)).toBeInTheDocument();
+});
+Run Tests
+bash
+Copy
+Edit
+npm test
+# or
+yarn test
+🚀 Getting Started
+1. Clone the repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/techstore.git
+cd techstore
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+3. Start the development server
+bash
+Copy
+Edit
+npm start
+# or
+yarn start
+The app will run at http://localhost:3000.
